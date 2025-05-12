@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Microgreen } from './Microgreen';
 
 @Component({
   selector: 'app-microgreen-list',
@@ -7,10 +8,24 @@ import { Component } from '@angular/core';
   styleUrl: './microgreen-list.component.scss'
 })
 export class MicrogreenListComponent {
-  microgreen = {
-    name: "Radish",
-    image: "assets/images/radish.jpg",
-    price: 50,
-    stock: 5
-  }
+  microgreen: Microgreen[] = [
+    {
+      name: 'Radish',
+      image: 'assets/images/radish.jpg',
+      price: 100,
+      stock: 8,
+    },
+    {
+      name: 'Brocoli',
+      image: 'assets/images/radish.jpg',
+      price: 100,
+      stock: 4,
+    },
+    {
+      name: 'Arugula',
+      image: 'assets/images/radish.jpg',
+      price: 130,
+      stock: 0,
+    },
+  ]
 }

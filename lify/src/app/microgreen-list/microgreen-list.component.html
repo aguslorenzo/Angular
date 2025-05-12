@@ -8,11 +8,23 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>{{microgreen.name}}</td>
-            <td><img [src]="microgreen.image" [alt]="microgreen.name"></td>
-            <td>{{microgreen.price}}</td>
-            <td>{{microgreen.stock}}</td>
-        </tr>
+        @for (microgreen of microgreen; track microgreen.name) {
+            <tr>
+                <td>{{microgreen.name}}</td>
+                <td><img [src]="microgreen.image" [alt]="microgreen.name"></td>
+                <td>{{microgreen.price}}</td>
+                <td>{{microgreen.stock}}</td>
+                @if (microgreen.stock > 0) {
+                    <td>{{microgreen.stock}}</td>
+                }@else {
+                    <td>SIN STOCK</td>
+                }
+            </tr>
+        }@empty {
+            <tr>
+                <td>No hay microgreens para mostrar.</td>
+            </tr>
+        }
+        
     </tbody>
 </table>
