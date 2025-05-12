@@ -14,18 +14,21 @@ export class MicrogreenListComponent {
       image: 'assets/images/radish.jpg',
       price: 100,
       stock: 8,
+      clearance: true,
     },
     {
       name: 'Brocoli',
       image: 'assets/images/radish.jpg',
       price: 100,
       stock: 4,
+      clearance: false,
     },
     {
       name: 'Arugula',
       image: 'assets/images/radish.jpg',
       price: 130,
       stock: 0,
+      clearance: false,
     },
   ]
 }

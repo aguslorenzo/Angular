@@ -3,4 +3,5 @@ export interface Microgreen {
     image: string;
     price: number;
     stock: number;
+    clearance: boolean;
 }

@@ -9,20 +9,19 @@
     </thead>
     <tbody>
         @for (microgreen of microgreen; track microgreen.name) {
-            <tr>
+            <tr [ngClass]="{'clearance': microgreen.clearance}"> <!--TODO not working-->
                 <td>{{microgreen.name}}</td>
                 <td><img [src]="microgreen.image" [alt]="microgreen.name"></td>
                 <td>{{microgreen.price}}</td>
-                <td>{{microgreen.stock}}</td>
-                @if (microgreen.stock > 0) {
-                    <td>{{microgreen.stock}}</td>
-                }@else {
-                    <td>SIN STOCK</td>
-                }
+                <td> @if (microgreen.stock > 0) {
+                        {{microgreen.stock}}
+                    } @else {
+                        <span class="badge text-bg-warning">SIN STOCK</span>
+                    }</td>
             </tr>
         }@empty {
             <tr>
-                <td>No hay microgreens para mostrar.</td>
+                <td colspan="4">No hay microgreens para mostrar.</td>
             </tr>
         }
         
