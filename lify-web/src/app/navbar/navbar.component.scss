@@ -1,0 +1,15 @@
+.my-navbar {
+    background-color: #5FB49C;
+    color: white;
+}
+
+.my-navbar div img {
+    height: 80px;
+    width: 80px;
+}
+.container-fluid {
+    flex-direction: column;
+}
+#navbarNav{
+    align-self: baseline;
+}
