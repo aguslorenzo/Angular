@@ -8,8 +8,8 @@
         </tr>
     </thead>
     <tbody>
-        @for (microgreen of microgreen; track microgreen.name) {
-            <tr> <!--TODO not working-->
+        @for (microgreen of microgreens; track microgreen.name) {
+            <tr [ngClass]="{ 'clearance': microgreen.clearance }"> <!--TODO ver si realmente mantengo esta clase o no-->
                 <td>{{microgreen.name}}</td>
                 <td><img [src]="microgreen.image" [alt]="microgreen.name"></td>
                 <td>{{microgreen.price}}</td>

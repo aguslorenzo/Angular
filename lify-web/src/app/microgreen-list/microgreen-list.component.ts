@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { Microgreen } from './Microgreen';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-microgreen-list',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './microgreen-list.component.html',
-  styleUrl: './microgreen-list.component.scss'
+  styleUrls: ['./microgreen-list.component.scss']
 })
 export class MicrogreenListComponent {
-microgreen: Microgreen[] = [
+microgreens: Microgreen[] = [
     {
       name: 'Radish',
       image: 'assets/images/radish.jpg',
