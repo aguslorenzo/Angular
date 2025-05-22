@@ -4,4 +4,5 @@ export interface Microgreen {
     price: number;
     stock: number;
     clearance: boolean;
+    quantity: number;
 }

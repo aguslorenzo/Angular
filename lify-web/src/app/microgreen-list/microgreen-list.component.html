@@ -5,6 +5,7 @@
             <th>Image</th>
             <th>Price</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -17,13 +18,23 @@
                         {{microgreen.stock}}
                     } @else {
                         <span class="badge text-bg-warning">SIN STOCK</span>
-                    }</td>
+                    }
+                </td>
+                <td>
+                    <button (click)="downQuantity(microgreen)">-</button>
+                    <input 
+                        type="text"
+                        [(ngModel)]="microgreen.quantity"
+                        (keyup)="onChangeQuantity($event, microgreen)"
+                        ><!--TODO esto no esta funcionando por el event del ts-->
+
+                    <button (click)="upQuantity(microgreen)">+</button>
+                </td>
             </tr>
         }@empty {
             <tr>
                 <td colspan="4">No hay microgreens para mostrar.</td>
             </tr>
         }
-        
     </tbody>
 </table>
