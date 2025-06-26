@@ -47,7 +47,7 @@ downQuantity(microgreen : Microgreen): void {
   if(microgreen.quantity > 0)
     microgreen.quantity--;
 }
-onChangeQuantity(event, microgreen: Microgreen): void{
+onChangeQuantity(event: Event, microgreen: Microgreen): void{
   console.log(event.target);
 }
 }
