@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { MicrogreenListComponent } from './microgreen-list/microgreen-list.component';
 import { MicrogreenAboutComponent } from './microgreen-about/microgreen-about.component';
+import { MicrogreenShopComponent } from './microgreen-shop/microgreen-shop.component';
 
 export const routes: Routes = [
     {
@@ -10,7 +10,7 @@ export const routes: Routes = [
     },
     {
         path: 'microgreens', 
-        component: MicrogreenListComponent
+        component: MicrogreenShopComponent
     },
     {
         path: 'about', 
