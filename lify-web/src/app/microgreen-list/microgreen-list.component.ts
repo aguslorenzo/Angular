@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Microgreen } from './Microgreen';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { InputIntegerComponent } from "../input-integer/input-integer.component";
 
 @Component({
   selector: 'app-microgreen-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, InputIntegerComponent],
   templateUrl: './microgreen-list.component.html',
   styleUrls: ['./microgreen-list.component.scss']
 })
@@ -38,16 +39,5 @@ microgreens: Microgreen[] = [
     },
   ]
   
-upQuantity(microgreen : Microgreen): void {
-  if(microgreen.quantity < microgreen.stock)
-    microgreen.quantity++;
-}
 
-downQuantity(microgreen : Microgreen): void {
-  if(microgreen.quantity > 0)
-    microgreen.quantity--;
-}
-onChangeQuantity(event: Event, microgreen: Microgreen): void{
-  console.log(event.target);
-}
 }

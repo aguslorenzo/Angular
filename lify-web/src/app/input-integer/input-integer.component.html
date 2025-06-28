@@ -1,1 +1,8 @@
-<p>input-integer works!</p>
+<button (click)="downQuantity(microgreen)">-</button>
+    <input 
+        type="text"
+        [(ngModel)]="microgreen.quantity"
+        (keyup)="onChangeQuantity($event, microgreen)"
+    >
+<button (click)="upQuantity(microgreen)">+</button>
+<!--minuto video 12:05-->

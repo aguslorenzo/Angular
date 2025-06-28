@@ -21,13 +21,9 @@
                     }
                 </td>
                 <td>
-                    <button (click)="downQuantity(microgreen)">-</button>
-                    <input 
-                        type="text"
-                        [(ngModel)]="microgreen.quantity"
-                        (keyup)="onChangeQuantity($event, microgreen)"
-                        >
-                    <button (click)="upQuantity(microgreen)">+</button>
+                    @if(microgreen.stock) {
+                        <app-input-integer [microgreen]="microgreen"></app-input-integer>
+                    }
                 </td>
             </tr>
         }@empty {
