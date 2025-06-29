@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Microgreen } from '../microgreen-list/Microgreen';
 import { FormsModule } from '@angular/forms';
 
@@ -11,18 +11,34 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputIntegerComponent {
   @Input()
-  microgreen!: Microgreen;
+  quantity!: number;
+
+  @Input()
+  max!: number;
+
+  @Output()
+  quantityChange: EventEmitter<number> = new EventEmitter<number>(); //esto es un emisor de eventos, vamos a estar generando nuestros propios eventos
   
-upQuantity(microgreen : Microgreen): void {
-  if(microgreen.quantity < microgreen.stock)
-    microgreen.quantity++;
+@Output()
+  maxReached: EventEmitter<string> = new EventEmitter<string>();//llegaste al limite de stock
+
+upQuantity(): void {
+  if(this.quantity < this.max){
+    this.quantity++;
+    this.quantityChange.emit(this.quantity);
+  }
+  else {
+    this.maxReached.emit("se alacanzó el max");
+  }
 }
 
-downQuantity(microgreen : Microgreen): void {
-  if(microgreen.quantity > 0)
-    microgreen.quantity--;
+downQuantity(): void {
+  if(this.quantity > 0)
+    this.quantity--;
+    this.quantityChange.emit(this.quantity);
 }
-onChangeQuantity(event: Event, microgreen: Microgreen): void{
+onChangeQuantity(event: Event): void{
   console.log(event.target);
+  this.quantityChange.emit(this.quantity);
 }
 }

@@ -22,7 +22,7 @@
                 </td>
                 <td>
                     @if(microgreen.stock) {
-                        <app-input-integer [microgreen]="microgreen"></app-input-integer>
+                        <app-input-integer [(quantity)]="microgreen.quantity" [max]="microgreen.stock" (maxReached)="maxReached($event)"></app-input-integer>
                     }
                 </td>
             </tr>

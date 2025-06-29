@@ -1,8 +1,8 @@
-<button (click)="downQuantity(microgreen)">-</button>
+<button (click)="downQuantity()">-</button>
     <input 
         type="text"
-        [(ngModel)]="microgreen.quantity"
-        (keyup)="onChangeQuantity($event, microgreen)"
+        [(ngModel)]="quantity"
+        (keyup)="onChangeQuantity($event)"
     >
-<button (click)="upQuantity(microgreen)">+</button>
+<button (click)="upQuantity()">+</button>
 <!--minuto video 12:05-->

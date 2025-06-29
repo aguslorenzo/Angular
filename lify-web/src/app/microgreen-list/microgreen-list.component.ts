@@ -39,5 +39,7 @@ microgreens: Microgreen[] = [
     },
   ]
   
-
+maxReached(m: string) {
+  alert(m);
+}
 }
