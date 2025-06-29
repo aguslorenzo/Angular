@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MicrogreenCartService } from '../microgreen-cart.service';
 
 @Component({
   selector: 'app-microgreen-cart',
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class MicrogreenCartComponent {
 
+constructor(private cart: MicrogreenCartService) {
+  }
 }

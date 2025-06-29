@@ -23,6 +23,7 @@
                 <td>
                     @if(microgreen.stock) {
                         <app-input-integer [(quantity)]="microgreen.quantity" [max]="microgreen.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                        <button class="button btn-primary" (click)="addToCart(microgreen)">Comprar</button>
                     }
                 </td>
             </tr>
