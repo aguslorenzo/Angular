@@ -2,7 +2,7 @@ export interface Microgreen {
     name: string;
     image: string;
     price: number;
-    stock: number;
-    clearance: boolean;
     quantity: number;
+    presentation: string;
+    stock: number;
 }

@@ -1,16 +1,17 @@
 <table class="table">
+
     <thead>
         <tr>
             <th>Name</th>
             <th>Image</th>
             <th>Price</th>
-            <th>Stock</th>
+            <!--<th>Stock</th>-->
             <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         @for (microgreen of microgreens; track microgreen.name) {
-            <tr [ngClass]="{ 'clearance': microgreen.clearance }"> <!--TODO ver si realmente mantengo esta clase o no-->
+            <tr>
                 <td>{{microgreen.name}}</td>
                 <td><img [src]="microgreen.image" [alt]="microgreen.name"></td>
                 <td>{{microgreen.price}}</td>

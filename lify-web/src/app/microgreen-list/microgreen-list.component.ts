@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InputIntegerComponent } from "../input-integer/input-integer.component";
 import { MicrogreenCartService } from '../microgreen-cart.service';
+import { MicrogreenDataService } from '../microgreen-data.service';
 
 @Component({
   selector: 'app-microgreen-list',
@@ -14,36 +15,18 @@ import { MicrogreenCartService } from '../microgreen-cart.service';
 })
 
 export class MicrogreenListComponent {
-microgreens: Microgreen[] = [
-    {
-      name: 'Radish',
-      image: 'assets/images/radish.jpg',
-      price: 100,
-      stock: 8,
-      clearance: true,
-      quantity: 0,
-    },
-    {
-      name: 'Brocoli',
-      image: 'assets/images/radish.jpg',
-      price: 100,
-      stock: 4,
-      clearance: false,
-      quantity: 0,
-    },
-    {
-      name: 'Arugula',
-      image: 'assets/images/radish.jpg',
-      price: 130,
-      stock: 0,
-      clearance: false,
-      quantity: 0,
-    },
-  ]
+  microgreens: Microgreen[] = [];
   
-  constructor(private cart: MicrogreenCartService) {
+  constructor(
+    private cart: MicrogreenCartService,
+    private microgreenDataService : MicrogreenDataService) {
   }
-  
+
+  ngOnInit(): void {
+    this.microgreenDataService.getAll()
+    .subscribe(microgreens => this.microgreens = microgreens);
+  }
+
 addToCart(microgreen: Microgreen): void {
   this.cart.addToCart(microgreen);
   microgreen.stock -= microgreen.quantity;
