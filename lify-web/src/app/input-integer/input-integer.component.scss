@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 16px;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #157347;
+}
+
+input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

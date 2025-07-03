@@ -1,11 +1,9 @@
-<table class="table">
-
+<!-- <table class="table">
     <thead>
         <tr>
             <th>Name</th>
             <th>Image</th>
             <th>Price</th>
-            <!--<th>Stock</th>-->
             <th>Compra</th>
         </tr>
     </thead>
@@ -34,4 +32,35 @@
             </tr>
         }
     </tbody>
-</table>
+</table> -->
+
+<div class="card-container">
+  @for (microgreen of microgreens; track microgreen.name) {
+    <div class="card">
+      <img [src]="microgreen.image" [alt]="microgreen.name" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">{{ microgreen.name }}</h5>
+        <p class="card-price">$ {{ microgreen.price }}</p>
+        <p class="card-stock">
+          @if (microgreen.stock > 0) {
+            Stock: {{ microgreen.stock }}
+          } @else {
+            <span class="badge text-bg-warning">SIN STOCK</span>
+          }
+        </p>
+
+        @if(microgreen.stock) {
+          <app-input-integer
+            [(quantity)]="microgreen.quantity"
+            [max]="microgreen.stock"
+            (maxReached)="maxReached($event)">
+          </app-input-integer>
+
+          <button (click)="addToCart(microgreen)"><i class="bi bi-cart-plus me-2"></i>Add to cart</button>
+        }
+      </div>
+    </div>
+  } @empty {
+    <p>No hay microgreens para mostrar.</p>
+  }
+</div>
