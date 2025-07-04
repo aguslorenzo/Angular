@@ -3,10 +3,11 @@ import { MicrogreenCartService } from '../microgreen-cart.service';
 import { Microgreen } from '../microgreen-list/Microgreen';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-microgreen-cart',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './microgreen-cart.component.html',
   styleUrl: './microgreen-cart.component.scss'
 })
