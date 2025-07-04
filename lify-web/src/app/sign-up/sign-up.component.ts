@@ -1,10 +1,11 @@
 import { NgIf } from '@angular/common';
 import { Component, output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators} from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, RouterLink],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss'
 })

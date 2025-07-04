@@ -29,7 +29,7 @@
         <input id="repeatPassword" type="password" formControlName="repeatPassword">
         <p *ngIf="formSignUp.hasError('passwordMismatch')">Las constraseñas no coinciden</p>
     </div>
-    <button [disabled]="formSignUp.invalid" type="submit">Sign up</button>
+    <button [disabled]="formSignUp.invalid" type="submit" routerLink="/checkout">Sign up</button>
 </form>
 
 <!--esto solo para chequear-->

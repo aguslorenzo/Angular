@@ -31,6 +31,6 @@
             <span class="label">Total</span>
             <span class="value">$ {{ getSubtotal(cartItems) + shippingCost }}</span>
         </div>
-        <button class="checkout-btn" routerLink="/checkout" *ngIf="!hideCheckoutButton">Place Order →</button>
+        <button class="checkout-btn" routerLink="/contact" *ngIf="!hideCheckoutButton">Place Order →</button> <!--cambiar /endpoint-->
     </div>
 </div>
