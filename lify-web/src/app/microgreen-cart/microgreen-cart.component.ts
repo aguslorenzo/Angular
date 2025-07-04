@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MicrogreenCartService } from '../microgreen-cart.service';
 import { Microgreen } from '../microgreen-list/Microgreen';
 import { CommonModule } from '@angular/common';
@@ -18,6 +18,8 @@ export class MicrogreenCartComponent {
   constructor(private cart: MicrogreenCartService) {
     this.cartList$ = cart.cartList.asObservable();
   }
+
+  @Input() hideCheckoutButton: boolean = false;
 
   shippingCost = 800; //todo ver esto
 

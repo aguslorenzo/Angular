@@ -1,0 +1,12 @@
+.shop-container {
+  display: flex;
+  gap: 1rem;
+
+  .checkout-form {
+    flex: 3;
+  }
+
+  .cart {
+    flex: 1;
+  }
+}
