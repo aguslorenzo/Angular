@@ -24,6 +24,11 @@ export class MicrogreenCartService {
     console.log(this._cartList);
     this.cartList.next(this._cartList);
   };
+  removeFromCart(microgreen: Microgreen): void {
+    const current = this.cartList.getValue();
+    const updated = current.filter(item => item.name !== microgreen.name);
+    this.cartList.next(updated);
+  }
 
   
 }

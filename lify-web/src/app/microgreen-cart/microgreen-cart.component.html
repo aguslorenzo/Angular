@@ -1,6 +1,36 @@
-<p>Carrito de compras!</p>
-<ul>
-    <li *ngFor="let microgreen of cartList$ | async">
-        {{microgreen.name}}: {{microgreen.quantity}}
-    </li>
-</ul>
+<div class="cart-container">
+    <h4>Your Cart</h4>
+    <div class="cart-items">
+        <div class="cart-item" *ngFor="let microgreen of cartList$ | async">
+            <img [src]="microgreen.image" [alt]="microgreen.name" class="cart-img" />
+        <div class="cart-info">
+            <h6>{{ microgreen.name }}</h6>
+            <p class="text-muted">{{ microgreen.presentation }}</p>
+            <p class="price">$ {{ microgreen.price }}</p>
+        </div>
+        <div class="cart-quantity">
+            x{{ microgreen.quantity }}
+            <button class="btn btn-link text-danger btn-sm ms-2" (click)="removeItem(microgreen)">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+    <hr />
+    <div class="cart-summary" *ngIf="cartList$ | async as cartItems">
+        <div class="summary-row">
+            <span class="label">Subtotal</span>
+            <span class="value">$ {{ getSubtotal(cartItems) }}</span>
+        </div>
+        <div class="summary-row">
+            <span class="label">Shipping</span>
+            <span class="value">$ {{ shippingCost }}</span>
+        </div>
+        <hr>
+        <div class="summary-row total">
+            <span class="label">Total</span>
+            <span class="value">$ {{ getSubtotal(cartItems) + shippingCost }}</span>
+        </div>
+        <button class="checkout-btn">Place Order →</button>
+    </div>
+</div>

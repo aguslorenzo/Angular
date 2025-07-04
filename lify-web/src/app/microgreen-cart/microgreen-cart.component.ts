@@ -14,9 +14,17 @@ export class MicrogreenCartComponent {
 
   cartList$: Observable<Microgreen[]>;
 
+  constructor(private cart: MicrogreenCartService) {
+    this.cartList$ = cart.cartList.asObservable();
+  }
 
-constructor(private cart: MicrogreenCartService) {
-  this.cartList$ = cart.cartList.asObservable();
-}
+  shippingCost = 800; //todo ver esto
 
+  getSubtotal(subtotalItems: Microgreen[]): number {
+    return subtotalItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }
+
+  removeItem(microgreen: Microgreen): void {
+    this.cart.removeFromCart(microgreen);
+  }
 }
