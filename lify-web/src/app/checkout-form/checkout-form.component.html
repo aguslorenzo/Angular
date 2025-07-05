@@ -1,8 +1,32 @@
 <div class="shop-container">
     <div class="checkout-form">
         <h2>Shipping data</h2>
-        <form [formGroup]="checkoutForm" >
+        <form [formGroup]="checkoutForm">
+            <label for="fullName">Fullname</label>
+            <input id="fullName" formControlName="fullName">
 
+            <label for="telephone">Phone</label>
+            <input id="telephone" formControlName="telephone">
+
+            <div formGroupName="address" class="address-group">
+                <label for="street">Address</label>
+                <input id="street" formControlName="street" />
+
+                <div class="inline-group">
+                    <div>
+                        <label for="city">City</label>
+                        <input id="city" formControlName="city" />
+                    </div>
+                    <div>
+                        <label for="state">State</label>
+                        <input id="state" formControlName="state" />
+                    </div>
+                </div>
+
+                <label for="zip">Zip code</label>
+                <input id="zip" formControlName="zip" />
+            </div>
+            <button type="submit">Click to confirm purchase</button>
         </form>
     </div>
     <div class="cart"><app-microgreen-cart [hideCheckoutButton]="true"></app-microgreen-cart></div>

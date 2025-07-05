@@ -1,11 +1,12 @@
 import { NgIf } from '@angular/common';
 import { Component, output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators} from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { UsersDataService } from '../users-data.service';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule, NgIf, RouterLink],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss'
 })
@@ -17,6 +18,11 @@ export class SignUpComponent {
       repeatPassword: new FormControl('', []),
     }, [this.isMismatch]);
 
+    constructor(
+      private usersDataService: UsersDataService,
+      private router: Router
+    ) {}
+
     isMismatch(control: AbstractControl): ValidationErrors | null {
       return control.get('password')?.value !== control.get('repeatPassword')?.value
       ? {'passwordMismatch':true} 
@@ -24,6 +30,15 @@ export class SignUpComponent {
     };
 
     onSubmit(){
-      console.log(this.formSignUp.value);
-    }
+      
+      const {username, email, password} = this.formSignUp.value;
+
+      this.usersDataService.addUser({username: username!, email: email!, password: password!}).subscribe({
+        next: () => {
+          console.log('Usuario registrado');
+          this.router.navigate(['/checkout']);
+        },
+        error: (err) => console.error('Error registrando usuario', err)
+    });
+}
 }

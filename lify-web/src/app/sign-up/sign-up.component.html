@@ -20,16 +20,16 @@
         <label for="password">Password</label>
         <input id="password" type="password" formControlName="password">
         <div>
-            <p *ngIf="formSignUp.get('password')?.hasError('requiered')">el password es requerido</p>
-            <p *ngIf="formSignUp.get('password')?.hasError('minLength')">el password debe tener minimo 6 caracteres</p>
+            <p *ngIf="formSignUp.get('password')?.hasError('requiered')">Password is requiered.</p>
+            <p *ngIf="formSignUp.get('password')?.hasError('minlength')">Password must have at least 8 characters.</p>
         </div>
     </div>
     <div >
         <label for="repeatPassword">Repeat password</label>
         <input id="repeatPassword" type="password" formControlName="repeatPassword">
-        <p *ngIf="formSignUp.hasError('passwordMismatch')">Las constraseñas no coinciden</p>
+        <p *ngIf="formSignUp.hasError('passwordMismatch')">Passwords don't match.</p>
     </div>
-    <button [disabled]="formSignUp.invalid" type="submit" routerLink="/checkout">Sign up</button>
+    <button [disabled]="formSignUp.invalid" type="submit">Sign up</button>
 </form>
 
 <!--esto solo para chequear-->

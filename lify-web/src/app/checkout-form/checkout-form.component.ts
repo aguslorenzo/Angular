@@ -10,9 +10,13 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class CheckoutFormComponent {
   checkoutForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    repeatPassword: new FormControl('', []),
+    fullName: new FormControl('', [Validators.required]),
+    telephone: new FormControl('', [Validators.required]),
+    address: new FormGroup ({
+      street: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      state: new FormControl('', [Validators.required]),
+      zip: new FormControl('', [Validators.required]),
+    })
   });
 }
