@@ -14,7 +14,7 @@ export const routes: Routes = [
         component: MicrogreenAboutComponent
     },
     {
-        path: 'contact',
+        path: 'sign-up',
         component: SignUpComponent
     },
     {

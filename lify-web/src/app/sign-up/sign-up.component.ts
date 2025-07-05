@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, output } from '@angular/core';
+import { Component} from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersDataService } from '../users-data.service';
