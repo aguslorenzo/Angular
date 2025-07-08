@@ -20,6 +20,7 @@ export class MicrogreenCartComponent {
   }
 
   @Input() hideCheckoutButton: boolean = false;
+  @Input() hideRemoveFromCartButton: boolean = false;
 
   shippingCost = 800; //todo ver esto
 

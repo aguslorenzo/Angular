@@ -10,7 +10,7 @@
         </div>
         <div class="cart-quantity">
             x{{ microgreen.quantity }}
-            <button class="btn btn-link text-danger btn-sm ms-2" (click)="removeItem(microgreen)">
+            <button class="btn btn-link text-danger btn-sm ms-2" (click)="removeItem(microgreen)" *ngIf="!hideRemoveFromCartButton">
                 <i class="bi bi-x-lg"></i>
             </button>
         </div>

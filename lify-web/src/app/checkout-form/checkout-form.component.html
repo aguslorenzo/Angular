@@ -1,9 +1,12 @@
 <div class="shop-container">
     <div class="checkout-form">
         <h2>Shipping data</h2>
-        <form [formGroup]="checkoutForm">
+        <form [formGroup]="checkoutForm" (submit)="onSubmit()">
             <label for="fullName">Fullname</label>
             <input id="fullName" formControlName="fullName">
+
+            <label for="email">Email</label>
+            <input id="email" formControlName="email">
 
             <label for="telephone">Phone</label>
             <input id="telephone" formControlName="telephone">
@@ -29,5 +32,5 @@
             <button type="submit">Click to confirm purchase</button>
         </form>
     </div>
-    <div class="cart"><app-microgreen-cart [hideCheckoutButton]="true"></app-microgreen-cart></div>
+    <div class="cart"><app-microgreen-cart [hideCheckoutButton]="true" [hideRemoveFromCartButton]="true"></app-microgreen-cart></div>
 </div>

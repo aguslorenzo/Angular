@@ -17,11 +17,11 @@ export class MicrogreenCartService {
   addToCart(microgreen: Microgreen){
     let item: Microgreen | undefined= this._cartList.find(v1 => v1.name == microgreen.name);
     if(!item){
-      this._cartList.push({... microgreen}); //clona el objeto
+      this._cartList.push({... microgreen});
     }else {
       item.quantity += microgreen.quantity;
     }
-    console.log(this._cartList);
+    console.log(this._cartList); //todo quitar este console.log
     this.cartList.next(this._cartList);
   };
   removeFromCart(microgreen: Microgreen): void {
