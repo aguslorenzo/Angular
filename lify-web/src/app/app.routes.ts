@@ -6,6 +6,10 @@ import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 
 export const routes: Routes = [
     {
+        path: '',
+        component: MicrogreenShopComponent
+    },
+    {
         path: 'microgreens', 
         component: MicrogreenShopComponent
     },

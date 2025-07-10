@@ -1,9 +1,13 @@
-<div *ngIf="showSuccessMessage" class="success-message">
-  <h2>¡Gracias por tu compra!</h2>
-  <p>Tu pedido ha sido recibido y estamos preparándolo con amor 🌱</p>
+<div *ngIf="showSuccessModal" class="overlay">
+  <div class="success-modal">
+    <h2>¡Gracias por tu compra!</h2>
+    <p>Tu pedido ha sido recibido y estamos preparándolo con amor 🌱</p>
+  </div>
 </div>
-<!--todo mejorar este mensaje-->
-<div class="shop-container">
-    <div class="product-list"><app-microgreen-list></app-microgreen-list></div>
-    <div class="cart"><app-microgreen-cart></app-microgreen-cart></div>
-</div>
+  <!--todo mejorar este mensaje-->
+  <div class="shop-container">
+      <div class="product-list"><app-microgreen-list></app-microgreen-list></div>
+      <div class="cart"><app-microgreen-cart></app-microgreen-cart></div>
+  </div>
+
+

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MicrogreenListComponent } from '../microgreen-list/microgreen-list.component';
 import { MicrogreenCartComponent } from '../microgreen-cart/microgreen-cart.component';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -11,17 +11,28 @@ import { NgIf } from '@angular/common';
   styleUrl: './microgreen-shop.component.scss'
 })
 export class MicrogreenShopComponent {
-  showSuccessMessage = false;
+  showSuccessModal = false;
 
   constructor(
-    private route: ActivatedRoute
-  ){}
+    private router: Router
+  ){
+    const navigation = this.router.getCurrentNavigation();
+    const state = navigation?.extras.state as { purchaseSuccess?: boolean };
+
+    if (state?.purchaseSuccess) {
+      this.showSuccessModal = true;
+
+      setTimeout(() => {
+        this.showSuccessModal = false;
+      }, 10000);
+    }
+  }
 
   ngOnInit(){
-    this.route.queryParams.subscribe(params => {
-      if(params['success'] === 'true'){
-        this.showSuccessMessage = true;
-      }
-    })
+    //this.route.queryParams.subscribe(params => {
+     // if(params['success'] === 'true'){
+      //  this.showSuccessMessage = true;
+      //}
+    //})
   }
 }
