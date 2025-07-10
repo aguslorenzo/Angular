@@ -29,6 +29,9 @@ export class MicrogreenCartService {
     const updated = current.filter(item => item.name !== microgreen.name);
     this.cartList.next(updated);
   }
-
+  clearCart() {
+    this._cartList = [];
+    this.cartList.next([]);
+ }
   
 }

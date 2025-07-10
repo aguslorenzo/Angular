@@ -34,7 +34,7 @@ export class MicrogreenListComponent {
     microgreen.quantity = 0;    
   }
 
-maxReached(m: string) {
-  alert(m);
-}
-}
+  maxReached(m: string) {
+    alert(m);//todo cambiar esto
+  }
+  }

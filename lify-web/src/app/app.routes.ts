@@ -16,11 +16,11 @@ export const routes: Routes = [
     {
         path: 'about', 
         component: MicrogreenAboutComponent
-    },/*
+    },
     {
         path: 'sign-up',
         component: SignUpComponent
-    },*/
+    },
     {
         path: 'checkout',
         component: CheckoutFormComponent

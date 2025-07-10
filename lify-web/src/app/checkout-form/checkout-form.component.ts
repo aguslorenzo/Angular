@@ -3,6 +3,7 @@ import { MicrogreenCartComponent } from "../microgreen-cart/microgreen-cart.comp
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
+import { MicrogreenCartService } from '../microgreen-cart.service';
 
 @Component({
   selector: 'app-checkout-form',
@@ -13,7 +14,8 @@ import { Router } from '@angular/router';
 export class CheckoutFormComponent {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private cartService: MicrogreenCartService
   ){};
   
   currentForm = 1;
@@ -65,11 +67,11 @@ export class CheckoutFormComponent {
   }
   onPayment(){
     if (this.paymentForm.valid) {
-      this.router.navigate(['/microgreens'], {
+      this.cartService.clearCart();
+
+      this.router.navigate([''], {
         state: { purchaseSuccess: true }
       });
     } 
   }
-
-
 }
