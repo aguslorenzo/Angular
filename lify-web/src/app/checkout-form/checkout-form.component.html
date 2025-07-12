@@ -11,12 +11,12 @@
 
       <label for="fullName">Fullname *</label>
       <input id="fullName" formControlName="fullName">
-      <p *ngIf="checkoutForm.get('fullName')?.touched && checkoutForm.get('fullName')?.errors?.['required']">Este campo es obligatorio.</p>
+      <p *ngIf="checkoutForm.get('fullName')?.touched && checkoutForm.get('fullName')?.errors?.['required']">This field is required.</p>
 
       <label for="email">Email *</label>
       <input id="email" formControlName="email">
-      <p *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.errors?.['required']">Este campo es obligatorio.</p>
-      <p *ngIf="checkoutForm.get('email')?.errors?.['email']">El formato del email es incorrecto</p>
+      <p *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.errors?.['required']">This field is required.</p>
+      <p *ngIf="checkoutForm.get('email')?.errors?.['email']">The field format is incorrect.</p>
 
       <label for="telephone">Phone</label>
       <input id="telephone" formControlName="telephone">
@@ -24,19 +24,19 @@
       <div formGroupName="address" class="address-group">
         <label for="street">Street *</label>
         <input id="street" formControlName="street" />
-        <p *ngIf="checkoutForm.get('street')?.errors?.['required']">La calle es requerida</p>
+        <p *ngIf="checkoutForm.get('street')?.errors?.['required']">This field is required.</p>
 
 
         <div class="inline-group">
           <div>
             <label for="city">City *</label>
             <input id="city" formControlName="city" />
-            <p *ngIf="checkoutForm.get('city')?.errors?.['required']">La ciduad es requerida</p>
+            <p *ngIf="checkoutForm.get('city')?.errors?.['required']">This field is required.</p>
           </div>
           <div>
             <label for="state">State *</label>
             <input id="state" formControlName="state" />
-            <p *ngIf="checkoutForm.get('state')?.errors?.['required']">El estado es requerida</p>
+            <p *ngIf="checkoutForm.get('state')?.errors?.['required']">This field is required.</p>
           </div>
         </div>
       </div>
@@ -49,22 +49,22 @@
 
       <label for="card-number">Card number</label>
       <input type="text" id="card-number" formControlName="cardNumber">
-      <p *ngIf="paymentForm.get('cardNumber')?.touched && paymentForm.get('cardNumber')?.errors?.['required']">El campo es requerido</p>
-      <p *ngIf="paymentForm.get('cardNumber')?.dirty && paymentForm.get('cardNumber')?.errors?.['pattern']">El número debe tener 16 dígitos sin espacios.</p>
+      <p *ngIf="paymentForm.get('cardNumber')?.touched && paymentForm.get('cardNumber')?.errors?.['required']">This field is required.</p>
+      <p *ngIf="paymentForm.get('cardNumber')?.dirty && paymentForm.get('cardNumber')?.errors?.['pattern']">The number must have 16 digits without spaces.</p>
 
       <label for="card-name">Name on card</label>
       <input type="text" id="card-name" formControlName="cardName">
-      <p *ngIf="paymentForm.get('cardName')?.touched && paymentForm.get('cardName')?.errors?.['required']">El campo es requerido</p>
+      <p *ngIf="paymentForm.get('cardName')?.touched && paymentForm.get('cardName')?.errors?.['required']">This field is required.</p>
 
       <label for="expiration">Expiration (MM/YY)</label>
       <input type="text" id="expiration" formControlName="expiration" placeholder="07/26">
-      <p *ngIf="paymentForm.get('expiration')?.touched && paymentForm.get('expiration')?.errors?.['required']">El campo es requerido</p>
-      <p *ngIf="paymentForm.get('expiration')?.dirty && paymentForm.get('expiration')?.errors?.['pattern']">El formato es incorrecto.</p>
+      <p *ngIf="paymentForm.get('expiration')?.touched && paymentForm.get('expiration')?.errors?.['required']">This field is required.</p>
+      <p *ngIf="paymentForm.get('expiration')?.dirty && paymentForm.get('expiration')?.errors?.['pattern']">The field format is incorrect.</p>
 
       <label for="CVV">CVV</label>
       <input type="password" id="card-cvv" formControlName="cvv" placeholder="123">
-      <p *ngIf="paymentForm.get('cvv')?.touched && paymentForm.get('cvv')?.errors?.['required']">El campo es requerido</p>
-      <p *ngIf="paymentForm.get('cvv')?.dirty && paymentForm.get('cvv')?.errors?.['pattern']">El CVV debe tener 3 dígitos.</p>
+      <p *ngIf="paymentForm.get('cvv')?.touched && paymentForm.get('cvv')?.errors?.['required']">This field is required.</p>
+      <p *ngIf="paymentForm.get('cvv')?.dirty && paymentForm.get('cvv')?.errors?.['pattern']">The CVV must have 3 digits.</p>
 
       <button type="submit" [disabled]="paymentForm.invalid">Click to confirm purchase</button>
     </form>

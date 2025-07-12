@@ -22,9 +22,4 @@ export class UsersDataService {
     return this.http.post<User>(URL, user);
   }
 
-  emailExists(email: string): Observable<boolean> {
-    return this.http.get<User[]>(URL).pipe(
-      map(users => users.some(user => user.email.toLowerCase() === email.toLowerCase()))
-    )
-  }
 }

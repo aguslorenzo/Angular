@@ -27,12 +27,4 @@ export class MicrogreenShopComponent {
       }, 10000);
     }
   }
-
-  ngOnInit(){
-    //this.route.queryParams.subscribe(params => {
-     // if(params['success'] === 'true'){
-      //  this.showSuccessMessage = true;
-      //}
-    //})
-  }
 }

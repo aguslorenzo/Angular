@@ -22,7 +22,7 @@ export class MicrogreenCartComponent {
   @Input() hideCheckoutButton: boolean = false;
   @Input() hideRemoveFromCartButton: boolean = false;
 
-  shippingCost = 800; //todo ver esto
+  shippingCost = 1800;
 
   getSubtotal(subtotalItems: Microgreen[]): number {
     return subtotalItems.reduce((sum, item) => sum + item.price * item.quantity, 0);

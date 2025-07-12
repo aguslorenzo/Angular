@@ -21,7 +21,7 @@ export class MicrogreenCartService {
     }else {
       item.quantity += microgreen.quantity;
     }
-    console.log(this._cartList); //todo quitar este console.log
+  
     this.cartList.next(this._cartList);
   };
   removeFromCart(microgreen: Microgreen): void {

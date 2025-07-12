@@ -9,7 +9,7 @@
           @if (microgreen.stock > 0) {
             Stock: {{ microgreen.stock }}
           } @else {
-            <span class="badge text-bg-warning">SIN STOCK</span>
+            <span class="badge text-bg-warning">Out of stock</span>
           }
         </p>
 
@@ -25,6 +25,6 @@
       </div>
     </div>
   } @empty {
-    <p>No hay microgreens para mostrar.</p>
+    <p>No microgreens available.</p>
   }
 </div>

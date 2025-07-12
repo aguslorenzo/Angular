@@ -35,10 +35,9 @@ export class SignUpComponent {
 
       this.usersDataService.addUser({username: username!, email: email!, password: password!}).subscribe({
         next: () => {
-          console.log('Usuario registrado');
           this.router.navigate(['/checkout']);
         },
-        error: (err) => console.error('Error registrando usuario', err)
+        error: (err) => console.error('Error registering user.', err)
     });
 }
 }

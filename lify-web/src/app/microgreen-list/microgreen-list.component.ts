@@ -27,14 +27,10 @@ export class MicrogreenListComponent {
     .subscribe(microgreens => this.microgreens = microgreens);
   }
 
-
   addToCart(microgreen: Microgreen): void {
     this.cart.addToCart(microgreen);
     microgreen.stock -= microgreen.quantity;
     microgreen.quantity = 0;    
   }
 
-  maxReached(m: string) {
-    alert(m);//todo cambiar esto
-  }
   }

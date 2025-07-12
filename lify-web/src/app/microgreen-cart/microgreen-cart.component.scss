@@ -84,7 +84,7 @@
   .checkout-btn {
     margin-top: 1rem;
     width: 100%;
-    background-color: #facc15; // amarillo
+    background-color: #facc15; 
     border: none;
     padding: 10px;
     font-weight: 600;
@@ -93,7 +93,7 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #eab308; // más oscuro al hover
+      background-color: #eab308;
     }
   }
 }
