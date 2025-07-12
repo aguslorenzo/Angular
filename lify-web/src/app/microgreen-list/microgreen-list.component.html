@@ -16,8 +16,7 @@
         @if(microgreen.stock) {
           <app-input-integer
             [(quantity)]="microgreen.quantity"
-            [max]="microgreen.stock"
-            (maxReached)="maxReached($event)">
+            [max]="microgreen.stock">
           </app-input-integer>
 
           <button (click)="addToCart(microgreen)" [disabled]="microgreen.quantity === 0" ><i class="bi bi-cart-plus me-2"></i>Add to cart</button>
