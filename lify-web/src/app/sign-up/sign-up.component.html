@@ -1,4 +1,6 @@
 <form [formGroup]="formSignUp" (submit)="onSubmit()">
+    <p>You need to be logged in to place an order.</p>
+    <h2>Sign-up</h2>
     <div>
         <label for="username">Username</label>
         <input id="username" type="text" formControlName="username">

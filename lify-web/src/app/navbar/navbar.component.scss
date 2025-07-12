@@ -1,15 +1,46 @@
 .my-navbar {
-    background-color: #5FB49C;
-    color: white;
-}
+  background-color: #5FB49C;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
 
-.my-navbar div img {
-    height: 80px;
-    width: 80px;
-}
-.container-fluid {
-    flex-direction: column;
-}
-#navbarNav{
-    align-self: baseline;
+  .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 8px;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 1.5rem;
+
+    .nav-link {
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        text-decoration: none;
+      }
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+    }
+  }
 }
