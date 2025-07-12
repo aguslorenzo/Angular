@@ -10,3 +10,9 @@ La plataforma permite a los usuarios explorar variedades disponibles, agregarlas
 - 41104122
 - aguslorenzo21@gmail.com
 - Sede: Tandil
+
+## Link repositorio github
+https://github.com/aguslorenzo/Angular
+
+## Link editable Stackblitz
+https://stackblitz.com/~/github.com/aguslorenzo/Angular
